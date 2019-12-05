@@ -15,15 +15,6 @@
 //123789 does not meet these criteria (no double).
 //How many different passwords within the range given in your puzzle input meet these criteria?
 
-//range = 171309-643603
-
-let passwords = []
-
-//loop through every number in the range and run the two functions for each one, push into new array every number that meets the criteria, return the length of that array - AND BOOM!
-for(let i = 171309; i < 643603; i++){
-    
-}
-
 //function to find if value has any two matching digits, return true or false 
 twoMatchingDigits = (number) => {
     let outcome = false;
@@ -36,8 +27,6 @@ twoMatchingDigits = (number) => {
     }
     return outcome
 }
-
-console.log(twoMatchingDigits(1233))
 
 //function to find if value only gets larger or stays the same, return true or false 
 sameOrIncreasing = (number) => {
@@ -56,7 +45,21 @@ sameOrIncreasing = (number) => {
     return outcome;
 }
 
-console.log(sameOrIncreasing(111))
+//loop through every number in the range and run the two functions for each one, push into new array every number that meets the criteria, return the length of that array - AND BOOM!
+
+//range = 171309-643603
+
+getPasswords = () => {
+    let passwords = [];
+    for(let i = 171309; i < 643603; i++){
+        if(twoMatchingDigits(i) === true && sameOrIncreasing(i) === true){
+            passwords.push(i);
+        }
+    }
+    console.log(passwords.length);
+}
+
+getPasswords(); //1625
 
 
 
