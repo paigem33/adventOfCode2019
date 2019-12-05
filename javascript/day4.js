@@ -19,17 +19,29 @@
 
 let passwords = []
 
-//loop through every number in the range and run the two functions for each one, push into new array every number that meets the criteria, then return the length of that array
+//loop through every number in the range and run the two functions for each one, push into new array every number that meets the criteria, return the length of that array - AND BOOM!
 for(let i = 171309; i < 643603; i++){
     
 }
 
 //function to find if value has any two matching digits, return true or false 
-twoMatchingDigits = () => {
-    
+twoMatchingDigits = (number) => {
+    let outcome = false
+    let newNumber = number.toString();
+    for(let i = 0; i < newNumber.length; i++){
+        if(newNumber.charAt(i) === newNumber.charAt(i+1)){
+            outcome = true
+            break
+        }
+    }
+    return outcome
 }
 
+console.log(twoMatchingDigits(1233))
+
 //function to find if value only gets larger or stays the same, return true or false 
-notSmaller = () => {
-    
+notSmaller = (number) => {
+    let newNumber = (""+number).split("").map(Number) 
 }
+
+console.log(notSmaller(123))
