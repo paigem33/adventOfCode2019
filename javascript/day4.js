@@ -26,7 +26,7 @@ for(let i = 171309; i < 643603; i++){
 
 //function to find if value has any two matching digits, return true or false 
 twoMatchingDigits = (number) => {
-    let outcome = false
+    let outcome = false;
     let newNumber = number.toString();
     for(let i = 0; i < newNumber.length; i++){
         if(newNumber.charAt(i) === newNumber.charAt(i+1)){
@@ -40,8 +40,23 @@ twoMatchingDigits = (number) => {
 console.log(twoMatchingDigits(1233))
 
 //function to find if value only gets larger or stays the same, return true or false 
-notSmaller = (number) => {
+sameOrIncreasing = (number) => {
+    let outcome = false;
+    let lastNumber = 0;
     let newNumber = (""+number).split("").map(Number) 
+    for(let i = 0; i < newNumber.length; i++){
+        if(newNumber[i] >= lastNumber){
+            lastNumber = newNumber[i];
+            outcome = true;
+        } else {
+            outcome = false;
+            break;
+        }
+    }
+    return outcome;
 }
 
-console.log(notSmaller(123))
+console.log(sameOrIncreasing(111))
+
+
+
