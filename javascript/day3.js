@@ -35,6 +35,7 @@ convertPaths = (path) => {
             }
     }
     return finalPath
+//    console.log(finalPath)
 }
 
 
@@ -48,7 +49,7 @@ getDistance = (path) => {
     let distanceArray = [];
     let distance = 0;
     for(let i = 0; i < path.length; i++){
-        distance = distance + (Math.abs(path[i][0]) + Math.abs(path[i][1]))
+        distance = distance + (path[i][0] + path[i][1])
         distanceArray.push(distance);
     }
     return distanceArray;
@@ -57,10 +58,17 @@ getDistance = (path) => {
 let distance1 = getDistance(convertedPath1);
 let distance2 = getDistance(convertedPath2);
 
+console.log(getDistance(convertedPath1));
+console.log(getDistance(convertedPath2));
+
 getSame = (dist1,dist2) => {
     for(let i = 0; i < dist1.length; i++){
-        if(dist1[i] === dist2[i]){
-            stuff
+        for(let j = 0; j < dist1.length; j++){
+            //console.log(dist1[i]) //stays 75 until out of j's
+            //console.log(dist2[j]) // loops through like normal
+            if(dist1[i] === dist2[j]){
+                console.log('match! ' + dist2[j])
+            }
         }
     }
 }
