@@ -16,17 +16,17 @@
 //How many different passwords within the range given in your puzzle input meet these criteria?
 
 //function to find if value has any two matching digits, return true or false 
-twoMatchingDigits = (number) => {
-    let outcome = false;
-    let newNumber = number.toString();
-    for(let i = 0; i < newNumber.length; i++){
-        if(newNumber.charAt(i) === newNumber.charAt(i+1)){
-            outcome = true
-            break
-        }
-    }
-    return outcome
-}
+//twoMatchingDigits = (number) => {
+//    let outcome = false;
+//    let newNumber = number.toString();
+//    for(let i = 0; i < newNumber.length; i++){
+//        if(newNumber.charAt(i) === newNumber.charAt(i+1)){
+//            outcome = true
+//            break
+//        }
+//    }
+//    return outcome
+//}
 
 //function to find if value only gets larger or stays the same, return true or false 
 sameOrIncreasing = (number) => {
@@ -59,7 +59,40 @@ getPasswords = () => {
     console.log(passwords.length);
 }
 
-getPasswords(); //1625
+//getPasswords(); //1625
+
+//Part 2 
+
+//An Elf just remembered one more important detail: the two adjacent matching digits are not part of a larger group of matching digits.
+
+//basically the two matching digits cannot be a part of more than two matching digits, but as long as there are one set of two matching, its okay if there the other three digits match also
+
+//112233 meets these criteria because the digits never decrease and all repeated digits are exactly two digits long.
+//123444 no longer meets the criteria (the repeated 44 is part of a larger group of 444).
+//111122 meets the criteria (even though 1 is repeated more than twice, it still contains a double 22).
+
+threeMatchingDigits = (number) => {
+    let outcome = false;
+    let newNumber = number.toString();
+    for(let i = 0; i < newNumber.length; i++){
+        if(newNumber.charAt(i) === newNumber.charAt(i+1)){
+            outcome = true
+            break
+        }
+    }
+    //if it gets to this point it means there are two matching digits
+    if(outcome === true){
+        //stuff
+    }
+}
+
+console.log(threeMatchingDigits(112233));
+console.log(threeMatchingDigits(123444));
+console.log(threeMatchingDigits(111122));
+
+//sees how many times a char appears in a string, returns the number
+let test = "1112233"
+console.log(test.replace(/[^1]/g, "").length);
 
 
 
