@@ -76,6 +76,7 @@ threeMatchingDigits = (number) => {
     let newNumber = number.toString();
     for(let i = 0; i < newNumber.length; i++){
         if(newNumber.charAt(i) === newNumber.charAt(i+1)){
+            //maybe be able to check charAt(i+2), but didnt work and probably wont account for it doesn't have to be only set
             outcome = true
             break
         }
